@@ -12,11 +12,11 @@ namespace Image\ResizeOptions;
 interface ResizeOptionInterface
 {
     /**
-     * @param integer $width
-     * @param integer $height
+     * @param integer      $width
+     * @param integer      $height
      * @param integer|null $original_width
      * @param integer|null $original_height
      * @return array
      */
-    public static function getOptimalSize($width, $height, $original_width=null, $original_height=null);
+    public static function getOptimalSize($width, $height, $original_width = null, $original_height = null);
 }

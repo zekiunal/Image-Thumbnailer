@@ -22,7 +22,7 @@ class Crop extends ResizeOptionAbstract implements ResizeOptionInterface
     public static function getOptimalSize($width, $height, $original_width = null, $original_height = null)
     {
         $height_ratio = $original_height / $height;
-        $width_ratio  = $original_width / $width;
+        $width_ratio = $original_width / $width;
 
         if ($height_ratio < $width_ratio) {
             $optimal_ratio = $height_ratio;

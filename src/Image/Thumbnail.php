@@ -76,7 +76,7 @@ class Thumbnail
     /**
      * @param integer $width
      * @param integer $height
-     * @param string $destination
+     * @param string  $destination
      */
     public static function whiteImage($width, $height, $destination)
     {
@@ -103,13 +103,13 @@ class Thumbnail
     {
         $this->image = $this->createImage($file_name);
         if ($this->image === false) {
-            $image_info   = $this->getImageInfo($file_name);
-            $processor    = $this->getImageProcessorByMimeType($image_info['mime']);
-            $this->image  = $processor->createImage($file_name);
-            $this->width  = $image_info['width'];
+            $image_info = $this->getImageInfo($file_name);
+            $processor = $this->getImageProcessorByMimeType($image_info['mime']);
+            $this->image = $processor->createImage($file_name);
+            $this->width = $image_info['width'];
             $this->height = $image_info['height'];
         } else {
-            $this->width  = imagesx($this->image);
+            $this->width = imagesx($this->image);
             $this->height = imagesy($this->image);
         }
     }
@@ -240,14 +240,14 @@ class Thumbnail
      *
      * @param resource $dst_img
      * @param resource $src_img
-     * @param integer $dst_x x-coordinate of destination point.
-     * @param integer $dst_y y-coordinate of destination point.
-     * @param integer $src_x x-coordinate of source point.
-     * @param integer $src_y y-coordinate of source point.
-     * @param integer $dst_w Destination width.
-     * @param integer $dst_h Destination height.
-     * @param integer $src_w Source width.
-     * @param integer $src_h Source height.
+     * @param integer  $dst_x x-coordinate of destination point.
+     * @param integer  $dst_y y-coordinate of destination point.
+     * @param integer  $src_x x-coordinate of source point.
+     * @param integer  $src_y y-coordinate of source point.
+     * @param integer  $dst_w Destination width.
+     * @param integer  $dst_h Destination height.
+     * @param integer  $src_w Source width.
+     * @param integer  $src_h Source height.
      * @return bool true on success or false on failure.
      */
     protected function reSample($dst_img, $src_img, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h)

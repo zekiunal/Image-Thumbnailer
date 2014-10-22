@@ -18,7 +18,7 @@ class Extract extends ResizeOptionAbstract implements ResizeOptionInterface
      * @param integer $original_height
      * @return array
      */
-    public static function getOptimalSize($width, $height, $original_width=null, $original_height=null)
+    public static function getOptimalSize($width, $height, $original_width = null, $original_height = null)
     {
         return array('optimal_width' => $width, 'optimal_height' => $height);
     }
