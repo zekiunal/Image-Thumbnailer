@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Zeki
- * Date: 22.10.2014
- * Time: 11:07
- */
-
 namespace Image;
 
 /**
