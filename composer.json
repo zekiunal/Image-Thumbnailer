@@ -1,0 +1,17 @@
+{
+    "name": "zekiunal/imagethumbnailer",
+    "description": "Create thumbnail images, convert image types",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Zeki Ünal",
+            "email": "zekiunal@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-0": {
+            "ImageThumbnailer": "src/"
+        }
+    }
+}
