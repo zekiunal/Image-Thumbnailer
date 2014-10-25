@@ -1,9 +1,5 @@
 <?xml version="1.0"?>
 <project>
-    <!--<groupId>[YOUR.ORGANIZATION]</groupId>-->
-    <!--<artifactId>[YOUR.PROJECT]</artifactId>-->
-    <!--<name>[YOUR PROJECT NAME]</name>-->
-    <!--<version>[YOUR PROJECT VERSION]</version>-->
     <modelVersion>4.0.0</modelVersion>
     <groupId>Monapi</groupId>
     <artifactId>Lite</artifactId>
