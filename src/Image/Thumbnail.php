@@ -144,7 +144,7 @@ class Thumbnail
      */
     protected function getImageProcessorByExtension($extension)
     {
-        return new $this->extension_class_map[$mime_type]();
+        return new $this->extension_class_map[$extension]();
     }
 
     /**
