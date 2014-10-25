@@ -1,7 +1,14 @@
 <?php
 namespace Image;
 
-
+/**
+ * @author      Zeki Unal <zekiunal@gmail.com>
+ * @description
+ *
+ * @package     Image
+ * @name        ImageProcessorInterface
+ * @version     0.1
+ */
 interface ImageProcessorInterface
 {
     /**
