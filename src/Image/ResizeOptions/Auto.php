@@ -23,6 +23,13 @@ class Auto extends ResizeOptionAbstract implements ResizeOptionInterface
         return self::getSizeByAuto($width, $height, $original_width, $original_height);
     }
 
+    /**
+     * @param integer $width
+     * @param integer $height
+     * @param integer $original_width
+     * @param integer $original_height
+     * @return array
+     */
     protected static function getSizeByAuto($width, $height, $original_width, $original_height)
     {
         if ($original_height < $original_width) {
