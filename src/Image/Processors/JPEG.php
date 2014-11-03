@@ -19,7 +19,11 @@ class JPEG implements ProcessorInterface
     /**
      * @var string
      */
-    public static $extensions = array('.jpg', '.jpe', '.jpeg');
+    public static $extensions = array(
+        '.jpg',
+        '.jpe',
+        '.jpeg'
+    );
     
     /**
      * @param $file_name
