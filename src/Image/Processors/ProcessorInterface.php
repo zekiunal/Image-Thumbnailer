@@ -1,15 +1,15 @@
 <?php
-namespace Image;
+namespace Image\Processors;
 
 /**
  * @author      Zeki Unal <zekiunal@gmail.com>
  * @description
  *
  * @package     Image
- * @name        ImageProcessorInterface
+ * @name        ProcessorInterface
  * @version     0.1
  */
-interface ImageProcessorInterface
+interface ProcessorInterface
 {
     /**
      * @param $file_name

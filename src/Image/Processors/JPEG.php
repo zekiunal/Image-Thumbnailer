@@ -1,5 +1,5 @@
 <?php
-namespace Image;
+namespace Image\Processors;
 
 /**
  * @author      Zeki Unal <zekiunal@gmail.com>
@@ -9,8 +9,11 @@ namespace Image;
  * @name        JPEG
  * @version     0.1
  */
-class JPEG implements ImageProcessorInterface
+class JPEG implements ProcessorInterface
 {
+    public static $mimetype = 'image/jpeg';
+    public static $extensions = array('.jpg', '.jpe', '.jpeg');
+    
     /**
      * @param $file_name
      * @return resource

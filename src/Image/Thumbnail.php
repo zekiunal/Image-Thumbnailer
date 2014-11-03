@@ -2,6 +2,7 @@
 namespace Image;
 
 use Image\ResizeOptions\ResizeOptionInterface;
+use Image\Processors\ProcessorInterface;
 
 /**
  * @author      Zeki Unal <zekiunal@gmail.com>
@@ -13,44 +14,25 @@ use Image\ResizeOptions\ResizeOptionInterface;
  */
 class Thumbnail
 {
-    const IMAGE_JPEG = 'Image\JPEG';
-
-    const IMAGE_JPG = 'Image\JPEG';
-
-    const IMAGE_GIF = 'Image\GIF';
-
-    const IMAGE_PNG = 'Image\PNG';
-
     /**
      * @var array
      */
-    protected $mime_type_class_map = array(
-        'image/jpeg' => Thumbnail::IMAGE_JPEG,
-        'image/jpg'  => Thumbnail::IMAGE_JPG,
-        'image/gif'  => Thumbnail::IMAGE_GIF,
-        'image/png'  => Thumbnail::IMAGE_PNG
-    );
-
-    /**
-     * @var array
-     */
-    protected $extension_class_map = array(
-        '.jpeg' => Thumbnail::IMAGE_JPEG,
-        '.jpg'  => Thumbnail::IMAGE_JPG,
-        '.gif'  => Thumbnail::IMAGE_GIF,
-        '.png'  => Thumbnail::IMAGE_PNG
+    protected $processor_class_map = array(
+        'Image\\Processors\\PNG',
+        'Image\\Processors\\GIF',
+        'Image\\Processors\\JPEG'
     );
 
     /**
      * @var array
      */
     protected $resize_option_class_map = array(
-        'exact'     => 'Image\ResizeOptions\Exact',
-        'portrait'  => 'Image\ResizeOptions\Portrait',
-        'landscape' => 'Image\ResizeOptions\Landscape',
-        'auto'      => 'Image\ResizeOptions\Auto',
-        'crop'      => 'Image\ResizeOptions\Crop',
-        'default'   => 'Image\ResizeOptions\DefaultSize',
+        'exact'     => 'Image\\ResizeOptions\\Exact',
+        'portrait'  => 'Image\\ResizeOptions\\Portrait',
+        'landscape' => 'Image\\ResizeOptions\\Landscape',
+        'auto'      => 'Image\\ResizeOptions\\Auto',
+        'crop'      => 'Image\\ResizeOptions\\Crop',
+        'default'   => 'Image\\ResizeOptions\\DefaultSize',
     );
 
     /**
@@ -131,20 +113,47 @@ class Thumbnail
 
     /**
      * @param string $mime_type
-     * @return ImageProcessorInterface
+     * @return ProcessorInterface
      */
     protected function getImageProcessorByMimeType($mime_type)
     {
-        return new $this->mime_type_class_map[$mime_type]();
+        foreach ($this->processor_class_map as $processor) {
+            if ($processor::$mimetype === $mime_type) {
+                return new $processor ();
+            }
+        }
+        return null;
     }
 
     /**
      * @param string $extension
-     * @return ImageProcessorInterface
+     * @return ProcessorInterface
      */
     protected function getImageProcessorByExtension($extension)
     {
-        return new $this->extension_class_map[$extension]();
+        foreach ($this->processor_class_map as $processor) {
+            if (in_array($extension, $processor::$extensions, true)) {
+                return new $processor ();
+            }
+        }
+        return null;
+    }
+
+    /**
+     * @param string $class
+     */
+    protected function registerImageProcessor($class)
+    {
+        $this->processor_class_map[] = $class;
+    }
+
+    /**
+     * @param string $name
+     * @param string $class
+     */
+    protected function registerResizeOption($name, $class)
+    {
+        $this->resize_option_class_map[$name] = $class;
     }
 
     /**
