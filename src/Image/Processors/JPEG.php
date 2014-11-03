@@ -11,7 +11,14 @@ namespace Image\Processors;
  */
 class JPEG implements ProcessorInterface
 {
-    public static $mimetype = 'image/jpeg';
+    /**
+     * @var string
+     */
+    public static $mime_type = 'image/jpeg';
+
+    /**
+     * @var string
+     */
     public static $extensions = array('.jpg', '.jpe', '.jpeg');
     
     /**

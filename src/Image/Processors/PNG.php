@@ -11,7 +11,14 @@ namespace Image\Processors;
  */
 class PNG implements ProcessorInterface
 {
-    public static $mimetype = 'image/png';
+    /**
+     * @var string
+     */
+    public static $mime_type = 'image/png';
+
+    /**
+     * @var string
+     */
     public static $extensions = array('.png');
 
     /**

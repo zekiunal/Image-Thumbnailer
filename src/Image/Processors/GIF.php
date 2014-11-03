@@ -11,7 +11,14 @@ namespace Image\Processors;
  */
 class GIF implements ProcessorInterface
 {
-    public static $mimetype = 'image/gif';
+    /**
+     * @var string
+     */
+    public static $mime_type = 'image/gif';
+
+    /**
+     * @var array
+     */
     public static $extensions = array('.gif');
 
     /**

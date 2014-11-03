@@ -118,8 +118,8 @@ class Thumbnail
     protected function getImageProcessorByMimeType($mime_type)
     {
         foreach ($this->processor_class_map as $processor) {
-            if ($processor::$mimetype === $mime_type) {
-                return new $processor ();
+            if ($processor::$mime_type === $mime_type) {
+                return new $processor();
             }
         }
         return null;
@@ -133,7 +133,7 @@ class Thumbnail
     {
         foreach ($this->processor_class_map as $processor) {
             if (in_array($extension, $processor::$extensions, true)) {
-                return new $processor ();
+                return new $processor();
             }
         }
         return null;
