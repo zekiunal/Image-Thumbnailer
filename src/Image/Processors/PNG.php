@@ -1,23 +1,26 @@
 <?php
-namespace Image;
+namespace Image\Processors;
 
 /**
  * @author      Zeki Unal <zekiunal@gmail.com>
  * @description
  *
  * @package     Image
- * @name        GIF
+ * @name        PNG
  * @version     0.1
  */
-class GIF implements ImageProcessorInterface
+class PNG implements ProcessorInterface
 {
+    public static $mimetype = 'image/png';
+    public static $extensions = array('.png');
+
     /**
      * @param $file_name
      * @return resource
      */
     public function createImage($file_name)
     {
-        return imagecreatefromgif($file_name);
+        return imagecreatefrompng($file_name);
     }
 
     /**
@@ -29,6 +32,11 @@ class GIF implements ImageProcessorInterface
      */
     public function save($image, $filename = null, $quality = null, $filters = null)
     {
-        return imagegif($image, $filename);
+        /**
+         * Invert quality setting as 0 is best, not 9
+         */
+        $quality = 9 - round(($quality / 100) * 9);
+
+        return imagepng($image, $filename, $quality);
     }
 }
