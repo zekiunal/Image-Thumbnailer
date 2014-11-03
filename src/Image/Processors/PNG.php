@@ -17,7 +17,7 @@ class PNG implements ProcessorInterface
     public static $mime_type = 'image/png';
 
     /**
-     * @var string
+     * @var array
      */
     public static $extensions = array('.png');
 

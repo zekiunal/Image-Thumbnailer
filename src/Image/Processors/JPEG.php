@@ -17,7 +17,7 @@ class JPEG implements ProcessorInterface
     public static $mime_type = 'image/jpeg';
 
     /**
-     * @var string
+     * @var array
      */
     public static $extensions = array(
         '.jpg',
