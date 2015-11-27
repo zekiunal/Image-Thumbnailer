@@ -27,3 +27,4 @@ $image->save('destination_file.jpg');
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/zekiunal/image-thumbnailer/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+
